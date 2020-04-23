@@ -1,17 +1,17 @@
-FROM ruby:2.6.3
+FROM ruby:2.6.3-alpine3.10
 
-# リポジトリを更新し依存モジュールをインストール
-RUN apt-get update -qq && \
-    apt-get install -y build-essential \
-                       nodejs
+RUN apk add --no-cache alpine-sdk \
+    nodejs-current \
+    nodejs-npm \
+    mysql-client \
+    mysql-dev \
+    tzdata
 
-# install yarn
-# https://yarnpkg.com/en/docs/install#linux-tab
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-RUN apt-get update
-RUN apt-get install -y yarn
+# yarn install
+RUN apk update && apk add -u yarn
 
+# vue/cli install
+RUN npm install --global @vue/cli @vue/cli-init
 
 # ルート直下にwebappという名前で作業ディレクトリを作成（コンテナ内のアプリケーションディレクトリ）
 RUN mkdir /webapp
