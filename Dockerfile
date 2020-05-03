@@ -8,7 +8,9 @@ RUN apk add --no-cache alpine-sdk \
     tzdata
 
 # yarn install
-RUN apk update && apk add -u yarn
+# RUN apk update && apk add -u yarn
+
+RUN apk update && apk add npm
 
 # vue/cli install
 RUN npm install --global @vue/cli @vue/cli-init

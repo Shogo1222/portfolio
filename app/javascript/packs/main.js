@@ -7,15 +7,25 @@
 
 import Vue from 'vue'
 import App from '../app.vue'
+import LikeNumber from '../components/LikeNumber.vue'
 
-document.addEventListener('DOMContentLoaded', () => {
-  const app = new Vue({
-    render: h => h(App)
-  }).$mount()
-  document.body.appendChild(app.$el)
+Vue.config.productionTip = false;
+Vue.component('LikeNumber', LikeNumber);
+Vue.filter("upperCase", function(value){
+  return value.toUpperCase();
+});
 
-  console.log(app)
-})
+
+new Vue({
+   render: h => h(App)
+}).$mount("#app");
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const app = new Vue({
+//     render: h => h(App)
+//   }).$mount("#app")
+// })
+
 
 
 // The above code uses Vue without the compiler, which means you cannot

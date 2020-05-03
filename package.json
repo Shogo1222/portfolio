@@ -1,13 +1,45 @@
 {
-  "name": "webapp",
+  "name": "randomrestaurant",
   "private": true,
   "dependencies": {
     "@rails/webpacker": "5.0.1",
+    "@vue/cli-service": "^4.3.1",
+    "axios": "^0.19.2",
+    "babel-loader": "^8.1.0",
     "vue": "^2.6.11",
+    "vue-eslint-parser": "^7.0.0",
     "vue-loader": "^15.9.1",
-    "vue-template-compiler": "^2.6.11"
+    "vue-router": "^3.1.6",
+    "vue-template-compiler": "^2.6.11",
+    "vuex": "^3.2.0"
   },
   "devDependencies": {
+    "@vue/cli": "^4.3.1",
+    "vue-style-loader": "^4.1.2",
     "webpack-dev-server": "^3.10.3"
-  }
+  },
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "version": "1.0.0",
+  "main": "babel.config.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "vue": "vue",
+    "serve": "node_modules/.bin/vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shogo1222/portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shogo1222/portfolio/issues"
+  },
+  "homepage": "https://github.com/Shogo1222/portfolio#readme"
 }
