@@ -1,22 +1,26 @@
 <template>
-  <div id="app">
-    <p>{{ message }}</p>
+  <div>
+      <HeaderItem></HeaderItem>
+      <Home></Home>
+      <StoreArea></StoreArea>
   </div>
 </template>
 
 <script>
+import HeaderItem from './components/HeaderItem.vue'
+import Home from './views/Home.vue'
+import StoreArea from './views/StoreArea.vue'
+
+
 export default {
-  data: function () {
-    return {
-      message: "Hello Vue!"
-    }
+  components : {
+    HeaderItem,
+    Home,
+    StoreArea
   }
 }
 </script>
 
 <style scoped>
-p {
-  font-size: 2em;
-  text-align: center;
-}
+
 </style>

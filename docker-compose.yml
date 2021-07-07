@@ -29,6 +29,16 @@ services:
       - 80:80
     depends_on:
       - app
+  webpacker:
+      build: .
+      command: bundle exec bin/webpack-dev-server
+      volumes:
+        - public-data:/webapp/public
+        - tmp-data:/webapp/tmp
+      ports:
+        - "3035:3035"
+      depends_on:
+        - app
 volumes:
   public-data:
   tmp-data:

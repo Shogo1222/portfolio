@@ -7,15 +7,22 @@
 
 import Vue from 'vue'
 import App from '../app.vue'
+import router from './router'
 
-document.addEventListener('DOMContentLoaded', () => {
-  const app = new Vue({
-    render: h => h(App)
-  }).$mount()
-  document.body.appendChild(app.$el)
 
-  console.log(app)
-})
+Vue.config.productionTip = false;
+
+new Vue({
+   router: router,
+   render: h => h(App)
+}).$mount("#app");
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const app = new Vue({
+//     render: h => h(App)
+//   }).$mount("#app")
+// })
+
 
 
 // The above code uses Vue without the compiler, which means you cannot
